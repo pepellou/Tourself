@@ -10,6 +10,15 @@ body {
     -webkit-border-radius: 15px;
 }
 
+.title-bar {
+    height: 30px;
+    padding-top: 20px;
+}
+
+.form-dates {
+    padding-top: 7px;
+}
+
 .tourself-tab {
     width: 234px;
     height: 55px;
@@ -25,12 +34,6 @@ body {
 
 .nav li:first-child {
     margin-top: 0px;
-}
-
-.nav li:first-child a {
-    border-top-left-radius: 15px !important;
-    -moz-border-top-left-radius: 15px !important;
-    -webkit-border-top-left-radius: 15px !important;
 }
 
 .nav li:last-child a {
