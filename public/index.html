@@ -10,6 +10,11 @@
     <!-- Le styles -->
     <link href="../assets/css/bootstrap.css" rel="stylesheet">
     <link href="../assets/css/custom.css" rel="stylesheet">
+
+    <link type="text/css"
+          href="../assets/js/jquery-ui/css/ui-lightness/jquery-ui-1.8.18.custom.css"
+          rel="Stylesheet" />	
+
 <!--    <link href="../assets/css/bootstrap-responsive.css"
      rel="stylesheet"> -->
 
@@ -27,26 +32,35 @@
 
   <body>
     <div class="container ticket">
-      <div class="row">
+      <div class="row title-bar">
         <div class="span1 offset1">
           <h1>Londres</h1>
         </div>
         <div class="span2 offset2">
-          <h2>foo</h2>
+          <form class="form-horizontal">
+            <fieldset>
+              <div class="control-group">
+                <label class="control-label">Viajeros</label>
+                <div class="controls">
+                  <input id="travellers-picker" type="text" class="input-small">
+                </div>
+              </div>
+            </fieldset>
+          </form>
         </div>
-        <div class="span3 offset1 form-dates">
+        <div class="span3 offset2">
           <form class=".form-inline">
-            <input type="text" class="input-small" placeholder="Fecha Partida">
-            <input type="text" class="input-small"
+            <input id="start-date" type="text" class="input-small" placeholder="Fecha Partida">
+            <input id="end-date" type="text" class="input-small"
                    placeholder="Fecha Vuelta">
           </form>
         </div>
       </div>
 
 
-      <div class="tabbable tabs-left">
+      <div id="content" class="tabbable tabs-left" style="display: none;">
         <ul class="nav nav-tabs nav-stacked">
-          <li class="active">
+          <li>
             <a href="#1" data-toggle="tab">
               <div class="tourself-tab flight">
                 <strong>
@@ -59,14 +73,12 @@
           <li>
             <a href="#2" data-toggle="tab">
               <div class="tourself-tab hotel">
-
               </div>
             </a>
           </li>
           <li>
             <a href="#3" data-toggle="tab">
               <div class="tourself-tab plan">
-
               </div>
             </a>
           </li>
@@ -76,7 +88,7 @@
             <p>I'm in Section 1.</p>
           </div>
           <div class="tab-pane" id="2">
-            <p>Howdy, I'm in Section 2.</p>
+            <img src="../assets/img/VistaSelHotel.png" />
           </div>
         </div>
     </div> <!-- /container -->
@@ -97,12 +109,11 @@
     <script src="../assets/js/bootstrap-collapse.js"></script>
     <script src="../assets/js/bootstrap-carousel.js"></script>
     <script src="../assets/js/bootstrap-typeahead.js"></script>
-
-    <script>
-      $(function () {
-          $('.tabs a:last').tab('show')
-      })
-    </script>
+    
+    <script src="../assets/js/jquery-ui/js/jquery-ui-1.8.18.custom.min.js"></script>
+    <script src="../assets/js/jquery.ui.datepicker-es.js"></script>
+    <script src="../assets/js/ui.spinner.min.js"></script>
+    <script src="../assets/js/custom.js"></script>
 
   </body>
 </html>
