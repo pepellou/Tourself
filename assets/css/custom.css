@@ -1,3 +1,15 @@
+body {
+    background-color: #333;
+}
+
+.ticket {
+    background-color: white;
+    margin-top: 30px;
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+}
+
 .tourself-tab {
     width: 234px;
     height: 55px;
@@ -9,6 +21,26 @@
 
 .nav li {
     margin-top: -4px;
+}
+
+.nav li:first-child {
+    margin-top: 0px;
+}
+
+.nav li:first-child a {
+    border-top-left-radius: 15px !important;
+    -moz-border-top-left-radius: 15px !important;
+    -webkit-border-top-left-radius: 15px !important;
+}
+
+.nav li:last-child a {
+    border-bottom-left-radius: 15px !important;
+    -moz-border-bottom-left-radius: 15px !important;
+    -webkit-border-bottom-left-radius: 15px !important;
+}
+
+.nav {
+    margin-bottom: 0px;
 }
 
 .flight {
