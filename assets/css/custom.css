@@ -1,0 +1,24 @@
+.tourself-tab {
+    width: 234px;
+    height: 55px;
+    text-align: right;
+    padding-top: 120px;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.nav li {
+    margin-top: -4px;
+}
+
+.flight {
+    background-image: url('../img/tab-flights.png');
+}
+
+.hotel {
+    background-image: url('../img/tab-hotels-red.png');
+}
+
+.plan {
+    background-image: url('../img/tab-plan.png');
+}
