@@ -116,7 +116,7 @@ body {
 }
 
 .flight {
-    background-image: url('../img/tab-flights.png');
+    background-image: url('../img/tab-flights-red.png');
 }
 
 .hotel {
@@ -124,7 +124,7 @@ body {
 }
 
 .plan {
-    background-image: url('../img/tab-plan.png');
+    background: url('../img/TabPlan.png') no-repeat;
 }
 
 #footer {
