@@ -68,7 +68,9 @@ $(function () {
   $.datepicker.setDefaults($.datepicker.regional['es']);
   var datePickers = $('#start-date').add('#end-date');
 
-  datePickers.datepicker({defaultDate: "+1d", onSelect: checkRanges(datePickers)});
+  datePickers.datepicker({defaultDate: "+1d",
+                          onSelect: compose(checkRanges(datePickers),
+                                            checkDatesFilled(datePickers))});
 
   onEnter(travellersPicker, focusGoesTo(datePickers.first()));
   onEnter(datePickers.first(), focusGoesTo(datePickers.eq(1)));
@@ -104,6 +106,15 @@ $(function () {
   });}
  );
 
+function compose() {
+  var functions = arguments;
+  return function() {
+    var argumentsForEachFunction = arguments;
+    for (var i = 0; i < functions.length; i++) {
+      functions[i].apply(this, argumentsForEachFunction);
+    }
+  }
+}
 
 function checkRanges(datePickers) {
   return function(selectedDate) {
@@ -114,7 +125,6 @@ function checkRanges(datePickers) {
 	$.datepicker._defaults.dateFormat,
       selectedDate, instance.settings);
     datePickers.not(this).datepicker("option", option, date);
-    executeLater(checkDatesFilled);
   }
 }
 
@@ -138,11 +148,12 @@ function focusGoesTo(destination) {
   };
 }
 
-function checkDatesFilled() {
-  if ($('#start-date').val() && $('#end-date').val()) {
-    $('#content').show();
-    $('.first-tab').tab('show');
-    $(".btn-accept-flight").focus();
+function checkDatesFilled(datePickers) {
+  return function() {
+    if ($('#start-date').val() && $('#end-date').val()) {
+      $('#content').show();
+      $('.first-tab').tab('show');
+      $(".btn-accept-flight").focus();
+    }
   }
 }
-
