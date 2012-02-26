@@ -58,6 +58,16 @@ body {
     margin-right: 120px;
 }
 
+.btn-accept-hotel {
+    float: right;
+    margin-right: 120px;
+}
+
+.btn-back-hotel-picker {
+    float: left;
+    margin-left: 30px;
+}
+
 .flight {
     background-image: url('../img/tab-flights.png');
 }

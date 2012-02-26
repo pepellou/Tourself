@@ -75,20 +75,31 @@ $(function () {
   onEnter(travellersPicker, focusGoesTo(datePickers.first()));
   onEnter(datePickers.first(), focusGoesTo(datePickers.eq(1)));
 
-  var hotelPickers = $('.hotel-picker').add('.hotel-booking');
-  hotelPickers.click(function() {
-    hotelPickers.slideToggle();
+  var hotelPicker = $('.hotel-picker');
+  var hotelBooking = $('.hotel-booking');
+  var toggleHotelViews = function() {
+    hotelPicker.slideToggle();
+    hotelBooking.slideToggle();
+  };
+  hotelPicker.click(toggleHotelViews);
+
+  var acceptFlightButton = $('.btn-accept-flight');
+  acceptFlightButton.click(function() {
+    $('a[href="#2"]').tab('show');
   });
+
+  var acceptHotelButton = $('.btn-accept-hotel');
+  acceptHotelButton.click(function() {
+    $('a[href="#3"]').tab('show');
+  });
+  var btnBackHotelPicker = $(".btn-back-hotel-picker");
+  btnBackHotelPicker.click(toggleHotelViews);
 
   $('a[data-toggle="tab"]').on('shown', function (e) {
     var previousTab = e.relatedTarget;
     if (previousTab && (previousTab.href.indexOf('#1') !== -1)) {
       $('.flight-info').show();
     }
-  });
-  var acceptFlightButton = $('.btn-accept-flight');
-  acceptFlightButton.click(function() {
-    $('a[href="#2"]').tab('show');
   });
 });
 
