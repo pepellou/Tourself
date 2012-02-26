@@ -23,6 +23,17 @@ body {
     line-height: 20px;
 }
 
+.flight-info {
+    position: relative;
+    top: -20px;
+}
+
+.hotel-info {
+    padding-bottom: 10px;
+    position: relative;
+    top: -30px;
+}
+
 .logo {
     float: left;
     position: relative;
