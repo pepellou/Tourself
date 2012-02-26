@@ -1,3 +1,7 @@
+a:focus {
+    outline: none;
+}
+
 body {
     background-color: #333;
     padding-top: 30px;
@@ -55,8 +59,18 @@ body {
     padding-top: 2px;
 }
 
+.tabs-left .nav-tabs > li > a, .tabs-right .nav-tabs > li > a {
+    margin-bottom: 0px;
+}
+
 .nav li {
-    margin-top: -4px;
+    background-color: #f2f2f2;
+}
+
+.nav li.active {
+    border-top: 1px solid #666;
+    border-bottom: 1px solid #666;
+    background-color: #fff;
 }
 
 .nav li:first-child {
@@ -71,6 +85,19 @@ body {
 
 .nav {
     margin-bottom: 0px;
+}
+
+.tabs-left .nav-tabs {
+    border-right: 1px solid #999;
+}
+
+.tabs-left .nav-tabs {
+    margin-right: 0px;
+}
+
+.tab-content {
+    padding-left: 30px;
+    border-top: 1px solid #999;
 }
 
 .btn-accept-flight {
