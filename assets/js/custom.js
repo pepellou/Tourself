@@ -80,6 +80,12 @@ $(function () {
     hotelPickers.slideToggle();
   });
 
+  $('a[data-toggle="tab"]').on('shown', function (e) {
+    var previousTab = e.relatedTarget;
+    if (previousTab && (previousTab.href.indexOf('#1') !== -1)) {
+      $('.flight-info').show();
+    }
+  });
 });
 
 function executeLater(f) {
@@ -105,6 +111,7 @@ function focusGoesTo(destination) {
 function checkDatesFilled() {
   if ($('#start-date').val() && $('#end-date').val()) {
     $('#content').show();
+    $('.first-tab').tab('show');
   }
 }
 
