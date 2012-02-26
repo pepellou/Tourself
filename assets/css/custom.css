@@ -23,6 +23,18 @@ body {
     line-height: 20px;
 }
 
+.logo {
+    float: left;
+    position: relative;
+    top: -15px;
+    left: 25px;
+}
+
+.destination-picker-fieldset {
+    padding-left: 60px;
+    padding-top: 2px;
+}
+
 .nav li {
     margin-top: -4px;
 }
