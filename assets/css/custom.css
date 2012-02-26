@@ -53,6 +53,11 @@ body {
     margin-bottom: 0px;
 }
 
+.btn-accept-flight {
+    float: right;
+    margin-right: 120px;
+}
+
 .flight {
     background-image: url('../img/tab-flights.png');
 }
