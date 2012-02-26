@@ -86,6 +86,10 @@ $(function () {
       $('.flight-info').show();
     }
   });
+  var acceptFlightButton = $('.btn-accept-flight');
+  acceptFlightButton.click(function() {
+    $('a[href="#2"]').tab('show');
+  });
 });
 
 function executeLater(f) {
