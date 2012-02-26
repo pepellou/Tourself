@@ -50,8 +50,8 @@ body {
 .logo {
     float: left;
     position: relative;
-    top: -15px;
-    left: 25px;
+    left: 30px;
+    top: -10px;
 }
 
 .destination-picker-fieldset {
