@@ -151,7 +151,8 @@ function focusGoesTo(destination) {
 function checkDatesFilled(datePickers) {
   return function() {
     if ($('#start-date').val() && $('#end-date').val()) {
-      $('#content').show();
+      $('#header').slideUp(1000);
+      $('#content').slideDown(1000);
       $('.first-tab').tab('show');
       $(".btn-accept-flight").focus();
     }
