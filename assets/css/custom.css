@@ -115,6 +115,11 @@ body {
     margin-left: 30px;
 }
 
+.btn-print-plan {
+    float: right;
+    margin-right: 100px;
+}
+
 .flight {
     background-image: url('../img/tab-flights-red.png');
 }
