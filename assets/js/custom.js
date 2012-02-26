@@ -63,12 +63,17 @@ $(function () {
   var travellersPicker = $("#travellers-picker");
   travellersPicker.spinner({min: 1, max: 100, increment: 1});
 
+  onEnter(destinationPicker, focusGoesTo(travellersPicker));
+
   $.datepicker.setDefaults($.datepicker.regional['es']);
   var datePickers = $('#start-date').add('#end-date');
   datePickers.datepicker({defaultDate: "+1d"});
   datePickers.change(function() {
     executeLater(checkDatesFilled);
   });
+
+  onEnter(travellersPicker, focusGoesTo(datePickers.first()));
+  onEnter(datePickers.first(), focusGoesTo(datePickers.eq(1)));
 
   var hotelPickers = $('.hotel-picker').add('.hotel-booking');
   hotelPickers.click(function() {
@@ -79,6 +84,22 @@ $(function () {
 
 function executeLater(f) {
   setTimeout(f, 0);
+}
+
+var enterCode = 13;
+
+function onEnter(selection, action) {
+  selection.keyup(function(e) {
+    if (e.keyCode === enterCode) {
+      action();
+    }
+  });
+}
+
+function focusGoesTo(destination) {
+  return function() {
+    destination.focus();
+  };
 }
 
 function checkDatesFilled() {

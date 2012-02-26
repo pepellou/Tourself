@@ -35,7 +35,7 @@
     <div class="container ticket">
       <div class="row title-bar">
         <div class="span2">
-          <form class="form-horizontal">
+          <form class="form-horizontal" onsubmit="return false;">
             <fieldset>
               <div class="control-group">
                 <div class="controls">
@@ -48,7 +48,7 @@
           </form>
         </div>
         <div class="span2 offset2">
-          <form class="form-horizontal">
+          <form class="form-horizontal" onsubmit="return false;">
             <fieldset>
               <div class="control-group">
                 <label class="control-label">Viajeros</label>
@@ -60,8 +60,9 @@
           </form>
         </div>
         <div class="span3 offset2">
-          <form class=".form-horizontal">
-            <input id="start-date" type="text" class="input-small" placeholder="Fecha Partida">
+          <form class=".form-horizontal" onsubmit="return false;">
+            <input id="start-date" type="text" class="input-small"
+                   placeholder="Fecha Partida">
             <input id="end-date" type="text" class="input-small"
                    placeholder="Fecha Vuelta">
           </form>
