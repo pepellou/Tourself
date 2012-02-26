@@ -127,6 +127,7 @@ function checkDatesFilled() {
   if ($('#start-date').val() && $('#end-date').val()) {
     $('#content').show();
     $('.first-tab').tab('show');
+    $(".btn-accept-flight").focus();
   }
 }
 
