@@ -16,14 +16,8 @@ $(function () {
   $('#start-date').add('#end-date').change(function() {
     executeLater(checkDatesFilled);
   });
-  var hotelPicker = $('.hotel-picker');
-  var hotelBooking = $('.hotel-booking');
-  hotelPicker.click(function() {
-    hotelPicker.hide();
-    hotelBooking.show();
-  });
-  hotelBooking.click(function() {
-    hotelBooking.hide();
-    hotelPicker.show();
+  var hotelPickers = $('.hotel-picker').add('.hotel-booking');
+  hotelPickers.click(function() {
+    hotelPickers.slideToggle();
   });
 });
