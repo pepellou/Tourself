@@ -67,10 +67,8 @@ $(function () {
 
   $.datepicker.setDefaults($.datepicker.regional['es']);
   var datePickers = $('#start-date').add('#end-date');
-  datePickers.datepicker({defaultDate: "+1d"});
-  datePickers.change(function() {
-    executeLater(checkDatesFilled);
-  });
+
+  datePickers.datepicker({defaultDate: "+1d", onSelect: checkRanges(datePickers)});
 
   onEnter(travellersPicker, focusGoesTo(datePickers.first()));
   onEnter(datePickers.first(), focusGoesTo(datePickers.eq(1)));
@@ -100,8 +98,25 @@ $(function () {
     if (previousTab && (previousTab.href.indexOf('#1') !== -1)) {
       $('.flight-info').show();
     }
-  });
-});
+    if (previousTab && (previousTab.href.indexOf('#2') !== -1)) {
+      $('.hotel-info').show();
+    }
+  });}
+ );
+
+
+function checkRanges(datePickers) {
+  return function(selectedDate) {
+    var option = this.id == "start-date" ? "minDate" : "maxDate";
+    var instance = $(this).data("datepicker");
+    var date = $.datepicker.parseDate(
+      instance.settings.dateFormat ||
+	$.datepicker._defaults.dateFormat,
+      selectedDate, instance.settings);
+    datePickers.not(this).datepicker("option", option, date);
+    executeLater(checkDatesFilled);
+  }
+}
 
 function executeLater(f) {
   setTimeout(f, 0);
