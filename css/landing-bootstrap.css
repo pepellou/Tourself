@@ -3472,6 +3472,9 @@ a.thumbnail:hover {
   border-radius: 6px;
   height: 500px;  
 }
+.hero-unit.nobg {
+  background-image: none;
+}
 .hero-unit h1 {
   margin-bottom: 0;
   font-size: 60px;
